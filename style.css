@@ -15,6 +15,9 @@ li {
   list-style-type: none;
   margin: auto;
 }
+p {
+  text-align: center;
+}
 .container {
   max-width: 1080px;
   padding-left: 10px;
@@ -46,7 +49,6 @@ header img {
   justify-content: space-between;
   font-size: 18px;
 }
-
 .heading {
   font-weight: 100;
   font-size: 50px;
@@ -111,6 +113,35 @@ header button {
   text-decoration: none;
 }
 
+/*second div*/
+
+.second-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 90px 0;
+}
+.second-container .component {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  width: calc(100vw/3);
+  margin: auto;
+}
+.second-container .component p {
+  margin-top: 5px;
+  color: grey;
+  font-size: 17px;
+  line-height: 32px;
+  font-weight: 100;
+}
+.second-container h3 {
+  text-align: center;
+  font-size: 26px;
+  padding-top: 5px;
+  font-weight: 300;
+  line-height: 35px;
+}
+
 /*tablet*/
 
 @media (max-width: 900px) {
@@ -121,6 +152,12 @@ header button {
   }
   .computer-edge {
     width: 90%;
+  }
+  .second-container {
+    flex-direction: column;
+  }
+  .second-container .component {
+    width: 100%;
   }
 }
 
