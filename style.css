@@ -1,5 +1,9 @@
 /*global*/
-
+body {
+  width: 100vw;
+  overflow-x:hidden;
+  max-width: 100%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -17,11 +21,14 @@ li {
   padding-right: 10px;
   margin: auto;
 }
+.small {
+  max-width: 700px;
+  text-align: center;
+}
 
 /*header*/
 
 header {
-  height: 105vh;
   background-color: #CF4647;
   color: white;
 }
@@ -47,7 +54,6 @@ header img {
   margin-top: 120px;
   text-align: center;
 }
-
 .computer-screen {
   height: 100%;
   width: 100%;
@@ -72,12 +78,37 @@ header img {
   margin-top: 60px;
   margin-bottom: 60px;
 }
+.computer-edge::after {
+  content: "";
+  position: absolute;
+  border-radius: 3px 3px 0 0;
+  width: calc(100% + 200px);
+  height: 10px;
+  background: linear-gradient(to right, rgba(246,250,253,1) 0%,rgba(221,226,233,1) 6%,rgba(246,250,253,1) 15%,rgba(246,250,253,1) 42%,rgba(230, 230, 230, 1) 42%,rgba(246,250,253,1) 45%,rgba(246,250,253,1) 53%,rgba(230, 230, 230, 1) 56%,rgba(246,250,253,1) 56%, rgba(246,250,253,1) 85%,rgba(221,226,233,1) 94%,rgba(246,250,253,1) 100%);
+  left: -100px;
+  bottom: -5px;
+}
 .computer-text {
   color: #85FF00;
   font-family: Menlo, 'DejaVu Sans Mono', 'Lucida Console', monospace;
   font-size: 14pt;
   margin-top: 20px;
   margin-left: 20px;
+}
+header button {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  height: 40px;
+  line-height: 38px;
+  padding: 0 30px;
+  background: #fff;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  border: 1px solid white;
+  text-decoration: none;
 }
 
 /*tablet*/
@@ -98,6 +129,12 @@ header img {
 @media (max-width: 500px) {
   header nav {
     width: 100%;
+  }
+  .navigation-list {
+    width: 100%;
+  }
+  .computer-edge {
+    height: calc((100vw - 80px) * .75);
   }
   header nav img {
     display: none;
