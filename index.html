@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>gulp.js</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/agate.min.css">
   </head>
   <body>
     <header>
@@ -85,6 +85,40 @@
       </div>
     </div>
 
+    <div class="code-bar">
+      <div class="code-bar-small">
+        <div class="code-bar-top">
+          <span class="code-top-button close-button"></span>
+          <span class="code-top-button minimize-button"></span>
+          <span class="code-top-button maximize-button"></span>
+          <span class="code-top-filename">gulpfile.js</span>
+        </div>
+        <pre class="code-itself">
+          <code class="javascript hljs">
+            <span class="hljs-keyword">var</span> gulp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp'</span>);
+            <span class="hljs-keyword">var</span> pug = <span class="mobile-show"><br>  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-pug'</span>);
+            <span class="hljs-keyword">var</span> less = <span class="mobile-show"><br>  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-less'</span>);
+            <span class="hljs-keyword">var</span> minifyCSS = <span class="mobile-show"><br>  </span><span class="hljs-built_in">require</span>(<span class="hljs-string">'gulp-csso'</span>);
+
+            gulp.task(<span class="hljs-string">'html'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+              <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br>      </span><span class="hljs-string">'client/templates/*.pug'</span><span class="mobile-show"><br>    </span>)
+                .pipe(pug())
+                .pipe(gulp.dest(<span class="mobile-show"><br>      </span><span class="hljs-string">'build/html'</span><span class="mobile-show"><br>    </span>))
+            });
+
+            gulp.task(<span class="hljs-string">'css'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+              <span class="hljs-keyword">return</span> gulp.src(<span class="mobile-show"><br>      </span><span class="hljs-string">'client/templates/*.less'</span><span class="mobile-show"><br>    </span>)
+                .pipe(less())
+                .pipe(minifyCSS())
+                .pipe(gulp.dest(<span class="mobile-show"><br>      </span><span class="hljs-string">'build/css'</span><span class="mobile-show"><br>    </span>))
+            });
+
+            gulp.task(<span class="hljs-string">'default'</span>, <span class="mobile-show"><br>  </span>[ <span class="hljs-string">'html'</span>, <span class="hljs-string">'css'</span> ]<span class="mobile-show"><br></span>);
+          </code>
+        </pre>
+      </div>
+    </div>
+
     <div class="forth-container small">
       <h4>
         "Builds can be the most awful sinkhole for teams to waste their time with - gulp is a serious win for any project."
@@ -108,7 +142,7 @@
       </div>
     </footer>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
